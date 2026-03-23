@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/a6d28f1a-5e15-45eb-8c10-feb1b2cc03b7/files/644c6572-4228-467e-9011-57a80a827ab1.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/a6d28f1a-5e15-45eb-8c10-feb1b2cc03b7/files/58d36223-4776-456e-8430-288d6db78adf.jpg";
 
 const NAV_ITEMS = ["Главная", "Экология города", "Карта загрязнений", "Новости"];
 
