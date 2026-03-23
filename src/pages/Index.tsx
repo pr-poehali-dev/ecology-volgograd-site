@@ -47,6 +47,51 @@ const MAP_ZONES = [
   { name: "Кировский район", level: "умеренный", color: "bg-yellow-500", x: 42, y: 55 },
 ];
 
+const RECOMMENDATIONS = [
+  {
+    audience: "Горожанам",
+    icon: "Users",
+    color: "from-emerald-50 to-green-100",
+    borderColor: "border-emerald-200",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-700",
+    items: [
+      { icon: "TreePine", text: "Высаживайте деревья и кустарники у домов — 1 дерево поглощает до 22 кг CO₂ в год" },
+      { icon: "Bike", text: "Пересаживайтесь на велосипед или самокат для поездок до 5 км" },
+      { icon: "Recycle", text: "Сортируйте мусор: пункты приёма вторсырья есть в каждом районе города" },
+      { icon: "Droplets", text: "Экономьте воду — закрывайте кран при чистке зубов, используйте аэраторы" },
+    ],
+  },
+  {
+    audience: "Бизнесу",
+    icon: "Building2",
+    color: "from-amber-50 to-yellow-100",
+    borderColor: "border-amber-200",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-700",
+    items: [
+      { icon: "Filter", text: "Установите современные фильтры очистки воздуха и сточных вод на производстве" },
+      { icon: "Sun", text: "Переходите на солнечную генерацию: субсидии до 40% стоимости оборудования в 2026 г." },
+      { icon: "ClipboardCheck", text: "Проводите ежегодный экологический аудит и публикуйте результаты открыто" },
+      { icon: "Leaf", text: "Озеленяйте промышленные территории — защитные полосы деревьев снижают шум и пыль" },
+    ],
+  },
+  {
+    audience: "Городским властям",
+    icon: "Landmark",
+    color: "from-sky-50 to-blue-100",
+    borderColor: "border-blue-200",
+    iconBg: "bg-blue-100",
+    iconColor: "text-blue-700",
+    items: [
+      { icon: "MapPin", text: "Расширить сеть станций мониторинга воздуха до 30 точек к 2027 году" },
+      { icon: "Bus", text: "Перевести городской транспорт на электро- и газомоторное топливо" },
+      { icon: "Wind", text: "Ввести «зелёные зоны» вокруг школ и больниц с ограничением промвыбросов" },
+      { icon: "BookOpen", text: "Запустить экологическое просвещение в школах — уроки природоведения с полевыми выходами" },
+    ],
+  },
+];
+
 const NEWS = [
   {
     date: "18 марта 2026",
@@ -324,6 +369,60 @@ export default function Index() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* RECOMMENDATIONS */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="text-center mb-14">
+          <span className="text-primary text-xs font-golos font-medium uppercase tracking-widest">Что можно сделать</span>
+          <h2 className="font-cormorant text-4xl md:text-5xl font-semibold text-foreground mt-2">
+            Рекомендации по улучшению
+          </h2>
+          <p className="font-golos text-foreground/60 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+            Экология Волгограда — общая ответственность. Каждый может внести вклад: от простых привычек до системных изменений.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {RECOMMENDATIONS.map((rec, i) => (
+            <div
+              key={i}
+              className={`bg-gradient-to-br ${rec.color} border ${rec.borderColor} rounded-3xl p-6 hover:-translate-y-1 hover:shadow-lg transition-all duration-300`}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-10 h-10 rounded-xl ${rec.iconBg} flex items-center justify-center`}>
+                  <Icon name={rec.icon} size={18} className={rec.iconColor} />
+                </div>
+                <h3 className="font-cormorant text-2xl font-semibold text-foreground">{rec.audience}</h3>
+              </div>
+              <ul className="flex flex-col gap-4">
+                {rec.items.map((item, j) => (
+                  <li key={j} className="flex items-start gap-3">
+                    <div className={`w-7 h-7 rounded-lg ${rec.iconBg} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                      <Icon name={item.icon} size={13} className={rec.iconColor} />
+                    </div>
+                    <span className="font-golos text-sm text-foreground/75 leading-relaxed">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 bg-gradient-to-r from-primary/10 via-green-100/60 to-primary/5 rounded-3xl px-8 py-6 border border-primary/15 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          <div className="w-14 h-14 rounded-2xl bg-primary/15 flex items-center justify-center flex-shrink-0">
+            <Icon name="Heart" size={24} className="text-primary" />
+          </div>
+          <div className="flex-1">
+            <h3 className="font-cormorant text-2xl font-semibold text-foreground mb-1">Каждое действие важно</h3>
+            <p className="font-golos text-sm text-foreground/65 leading-relaxed">
+              Если каждый житель Волгограда посадит хотя бы одно дерево, город получит более 1 миллиона новых зелёных защитников. Начните сегодня.
+            </p>
+          </div>
+          <button className="flex-shrink-0 px-6 py-3 rounded-full bg-primary text-primary-foreground font-golos font-medium text-sm hover:opacity-90 transition-all hover:shadow-lg hover:shadow-primary/20 whitespace-nowrap">
+            Присоединиться
+          </button>
         </div>
       </section>
 
