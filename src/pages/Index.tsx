@@ -186,8 +186,8 @@ export default function Index() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="absolute top-24 right-16 w-32 h-32 opacity-20 animate-float">
           <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -198,14 +198,14 @@ export default function Index() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-golos font-medium mb-6 animate-fade-up">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/15 text-white text-xs font-golos font-medium mb-6 animate-fade-up backdrop-blur-sm border border-white/20">
               🌿 Экологический мониторинг города
             </span>
-            <h1 className="font-cormorant text-5xl md:text-7xl font-semibold text-foreground leading-tight mb-6 animate-fade-up delay-100">
+            <h1 className="font-cormorant text-5xl md:text-7xl font-semibold text-white leading-tight mb-6 animate-fade-up delay-100 drop-shadow-lg">
               Живая природа<br />
-              <em className="text-primary">Волгограда</em>
+              <em className="text-green-300">Волгограда</em>
             </h1>
-            <p className="font-golos text-base md:text-lg text-foreground/70 leading-relaxed mb-10 animate-fade-up delay-200">
+            <p className="font-golos text-base md:text-lg text-white/85 leading-relaxed mb-10 animate-fade-up delay-200 drop-shadow">
               Следим за состоянием воздуха, воды и зелёных зон. Оцениваем влияние промышленных предприятий и ищем путь к чистому городу.
             </p>
             <div className="flex flex-wrap gap-3 animate-fade-up delay-300">
